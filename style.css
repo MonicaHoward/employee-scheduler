@@ -1,0 +1,13 @@
+.app-darkest{
+    background: #2F312F;
+    color: #F0F0F0;
+}
+
+.app-dark{
+    background: #333533;
+    color: #F0F0F0;
+}
+
+.main {
+    height: 100vh;
+}
