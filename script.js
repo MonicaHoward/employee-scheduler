@@ -1,4 +1,5 @@
 // table columns
+var table = document.querySelector("#table");
 var shiftDate = document.querySelector(".shift-date");
 var employeeFirst = document.querySelector(".employee-first");
 var employeeLast = document.querySelector(".employee-last");
@@ -69,6 +70,13 @@ shifts.ref().on("child_added", function(childSnapshot, prevChildKey){
     var empEnd = childSnapshot.val().end;
     var empLength = childSnapshot.val().length;
 
-    console.log(shiftDate, shiftDept, empFirst, empLast, empStart, empEnd, empLength);
+    var newRow = table.insertRow(-1);
+    var newDate = newRow.insertCell(0).innerHTML = shiftDate;
+    var newFirst = newRow.insertCell(1).innerHTML = empFirst;
+    var newLast = newRow.insertCell(2).innerHTML = empLast;
+    var newDept = newRow.insertCell(3).innerHTML = shiftDept;
+    var newStart = newRow.insertCell(4).innerHTML = empStart;
+    var newEnd = newRow.insertCell(5).innerHTML = empEnd;
+    var newLength = newRow.insertCell(6).innerHTML = empLength;
 
-})
+});
