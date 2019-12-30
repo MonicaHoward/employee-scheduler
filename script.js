@@ -18,3 +18,17 @@ var shiftLengthInput = document.querySelector("#shift-length-input");
 
 // submit button
 var addShiftButton = document.querySelector("#add-shift-button");
+
+addShiftButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    var newShift = {
+        date: shiftDateInput.value,
+        dept: deptInput.value,
+        firstName: employeeFirstInput.value,
+        lastName: employeeLastInput.value,
+        start: shiftStartInput.value,
+        end: shiftEndInput.value,
+        length: shiftLengthInput.value
+    }
+    console.log(newShift);
+})
