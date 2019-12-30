@@ -49,8 +49,6 @@ addShiftButton.addEventListener("click", (e) => {
 
     shifts.ref().push(newShift);
 
-    console.log("shifts", shifts);
-
     shiftDateInput.value="";
     deptInput.value="";
     employeeFirstInput.value="";
@@ -58,4 +56,19 @@ addShiftButton.addEventListener("click", (e) => {
     shiftStartInput.value="";
     shiftEndInput.value="";
     shiftLengthInput.value="";
+});
+
+shifts.ref().on("child_added", function(childSnapshot, prevChildKey){
+    console.log(childSnapshot.val());
+
+    var shiftDate = childSnapshot.val().date;
+    var shiftDept = childSnapshot.val().dept;
+    var empFirst = childSnapshot.val().firstName;
+    var empLast = childSnapshot.val().lastName;
+    var empStart = childSnapshot.val().start;
+    var empEnd = childSnapshot.val().end;
+    var empLength = childSnapshot.val().length;
+
+    console.log(shiftDate, shiftDept, empFirst, empLast, empStart, empEnd, empLength);
+
 })
