@@ -31,4 +31,12 @@ addShiftButton.addEventListener("click", (e) => {
         length: shiftLengthInput.value
     }
     console.log(newShift);
+
+    shiftDateInput.value="";
+    deptInput.value="";
+    employeeFirstInput.value="";
+    employeeLastInput.value="";
+    shiftStartInput.value="";
+    shiftEndInput.value="";
+    shiftLengthInput.value="";
 })
