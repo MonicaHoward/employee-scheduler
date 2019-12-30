@@ -11,3 +11,10 @@
 .main {
     height: 100vh;
 }
+.sub-title{
+    display: block;
+}
+
+.add-shift-section {
+    width: 100vw;
+}
