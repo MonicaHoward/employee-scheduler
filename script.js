@@ -19,6 +19,21 @@ var shiftLengthInput = document.querySelector("#shift-length-input");
 // submit button
 var addShiftButton = document.querySelector("#add-shift-button");
 
+var firebaseConfig = {
+    apiKey: "AIzaSyBKbvRnxPDc3bcXwLD0QI-N2tDL5re21tk",
+    authDomain: "employee-scheduler-f95d7.firebaseapp.com",
+    databaseURL: "https://employee-scheduler-f95d7.firebaseio.com",
+    projectId: "employee-scheduler-f95d7",
+    storageBucket: "employee-scheduler-f95d7.appspot.com",
+    messagingSenderId: "966902632080",
+    appId: "1:966902632080:web:5512c0d69789a1011c9215",
+    measurementId: "G-50MK3QSY47"
+  };
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+var shifts = firebase.database();
+
 addShiftButton.addEventListener("click", (e) => {
     e.preventDefault();
     var newShift = {
@@ -31,6 +46,10 @@ addShiftButton.addEventListener("click", (e) => {
         length: shiftLengthInput.value
     }
     console.log(newShift);
+
+    shifts.ref().push(newShift);
+
+    console.log("shifts", shifts);
 
     shiftDateInput.value="";
     deptInput.value="";
